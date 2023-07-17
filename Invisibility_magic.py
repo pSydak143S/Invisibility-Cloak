@@ -2,9 +2,9 @@ import cv2
 import numpy
 
 
-#initial function for the callin of the trackbar
+#initial function for the calling of the trackbar
 def hello(x):
-	#only for referece
+	#only for reference
 	print("")
 
 #initialisation of the camera
