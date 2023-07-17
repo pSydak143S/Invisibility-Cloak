@@ -1,7 +1,6 @@
 import cv2
 import numpy
 
-
 #initial function for the calling of the trackbar
 def hello(x):
 	#only for reference
@@ -21,12 +20,12 @@ cv2.createTrackbar("lower_value","bars",54, 255, hello)
 #Capturing the initial frame for creation of background
 while(True):
 	cv2.waitKey(1000)
-	ret,init_frame = cap.read()
-	#check if the frame is returned then brake
+	ret,init_frame = cap.read() //ret becomes true whenever a successful frame of the initial background has been captured
+	#check if the frame is returned then break
 	if(ret):
 		break
 
-# Start capturing the frames for actual magic!!
+# Start capturing the frames for actual magic!
 while(True):
 	ret,frame = cap.read()
 	inspect = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -39,7 +38,7 @@ while(True):
 	lower_hue = cv2.getTrackbarPos("lower_hue","bars")
 	lower_saturation = cv2.getTrackbarPos("lower_saturation","bars")
 
-	#Kernel to be used for dilation
+	#Kernel to be used for dilation, it is a [3][3] matrix
 	kernel = numpy.ones((3,3),numpy.uint8)
 
 	upper_hsv = numpy.array([upper_hue,upper_saturation,upper_value])
