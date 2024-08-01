@@ -20,7 +20,7 @@ cv2.createTrackbar("lower_value","bars",54, 255, hello)
 #Capturing the initial frame for creation of background
 while(True):
 	cv2.waitKey(1000)
-	ret,init_frame = cap.read() //ret becomes true whenever a successful frame of the initial background has been captured
+	ret,init_frame = cap.read() 
 	#check if the frame is returned then break
 	if(ret):
 		break
